@@ -42,7 +42,7 @@
     
 
       <h2>Download</h2>
-      <p>Learner files: <a href="https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip">http://bitly.com/llc-python</a> (zip file)</p>
+      <p>Learner files: <a href="https://github.com/pnewhook/llc-intro-to-python/archive/master.zip">http://bit.ly/llc-python-nov-26</a> (zip file)</p>
       <ul>
         <li>unzip the learner file download (<em>extract all</em> if you’re on a PC)</li>
         <li>open <strong>slides.html</strong> in your browser to view the presentation</li>
@@ -57,10 +57,6 @@
         <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
       </p>
     </div>
-    <div class="sponsor">
-      <p>In partnership with
-      <img src="framework/img/telus-logo-white.svg" alt="Telus logo"></p>
-    </div>
   </header>
 
   <main>
@@ -72,18 +68,13 @@
           <span>Data Insights with Python for Beginners</span>
         </h1>
         <!-- TODO: Fill in instructor details -->
-      <!--   <h2><span>with</span> Instructor Name</h2>
+      <h2><span>with</span> Peter Newhook</h2>
       
-      <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <img class="instructor-img" src="http://ladieslearningcode.com/wp-content/uploads/2013/10/peter-newhook-150x150.jpeg" alt="instructor name">
       <ul>
-        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
-        <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-      </ul> -->
-        <div class="sponsor">
-          <p>In partnership with</p>
-          <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
-        </div>
+        <li><i class="fa fa-envelope"></i><a href="mailto:">peter.newhook@gmail.com</a></li>
+        <li><i class="fa fa-desktop"></i><a href="#">peternewhook.com</a></li>
+      </ul>
       </div>
     </section>
 
@@ -91,12 +82,12 @@
       <script type="text/template">
         # Today&rsquo;s project
 
-        Imagine you&rsquo;re organizing **National Learn to Code Day 2016**. 
+        Imagine you&rsquo;re organizing **National Learn to Code Day 2017**.
 
         ![](framework/img/workshop/learn-to-code-day.jpg)
         You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other interesting stats to put in a press release.
 
-        Today, you&rsquo;ll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2015.
+        Today, you&rsquo;ll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2016√.
       </script>
     </section>
 
@@ -182,7 +173,7 @@
 
       1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
       1. **[PyCharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
-      1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
+      1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/pnewhook/llc-intro-to-python/archive/master.zip).
         * make sure the **llc-intro-to-python-master.zip** file has been unzipped (and extracted for PC users) so you can access the contents of the folder
     </section>
 
@@ -852,6 +843,72 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Lists
+        So far we've only dealt with individual values (`str`, `int`, `bool`, etc)
+
+        Python can also store lists of values
+
+        ```
+        >>> beatles = ["John", "Paul", "George", "Ringo"]
+
+        >>> beatles
+        ['John', 'Paul', 'George', 'Ringo']
+        >>> type(beatles)
+        <type 'list'>
+        >>> len(beatles)
+        4
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Loops
+        Lists let us _loop_ over values.
+
+        _Looping_ means doing something for every value in a list.
+
+        Python has a few ways to loop over lists, but today we'll look at for loops.
+
+        ```
+        >>> for beatle in beatles:
+        ...     print(beatle)
+        ...
+        John
+        Paul
+        George
+        Ringo
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Now you try
+
+        Create a new file and try the following activities with loops.
+
+        * Create a list containing all the things you put on a sandwich (make sure you include a pickle)
+        * Print all the items in the list
+        * Print all the items in the list in the form "I want _topping_ on my sandwich"
+        * Print only the pickle
+        * *BONUS*: print everything but the pickle (*hint*: you can negate a boolean with `not`)
+      </script>
+    </section>
+
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Lunch!
+      </script>
+    </section>
+
+<!-- ==================== -->
+<!-- Afternoon Content-->
+<!-- ==================== -->
+
 <!-- -------------------- -->
 <!-- Opening a file -->
 <!-- -------------------- --> 
@@ -892,18 +949,20 @@
         To make use of the data in a file, we need to make sense of small portions at a time.
         In the `llc-chapters.csv` file, each line of the file represents a Ladies Learning Code chapter.
 
-        Let&rsquo;s try printing out a few individual lines using the example below. Remember, only add the code after the `>>>` symbol.
+        Let&rsquo;s try printing out a few individual lines using the example below. Remember, only add the code after the `...` symbol.
 
         ```python
         >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     print(chapters.readline())
+        ...     print(chapters.readline())
+
+        ...     print(chapters.readline())
+
+        ...     print(chapters.readline())
+
         City,Province,Chapter Lead(s)
-
-        >>>     print(chapters.readline())
         Vancouver,BC,Meghan
-
-        >>>     print(chapters.readline())
         Calgary,AB,Darcie
+
         ```
       </script>
     </section>
@@ -934,15 +993,14 @@
         
         We've just seen how to print out one line of a time but what if you need to read all the lines in the file?
 
-        In programming, to perform the same action many times in a row, **loops** are used.  
-        In Python, try using the `for` loop to print each of the rows in the file. 
+        That sounds like a job for loops! Fortunately, we can treat `chapters` like a list.
         
         Here's some sample code:
 
         ```python
         >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     for line in chapters:
-        ...         print(line)
+        >>>   for line in chapters:
+        ...     print(line)
         ...
         ```
         
@@ -968,16 +1026,6 @@
         We&rsquo;ll use the `for` loop in our future exercises to work with a larger file.
       </script>
     </section>
-
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        # Lunch! 
-      </script>
-    </section>
-
-<!-- ==================== -->
-<!-- Afternoon Content-->
-<!-- ==================== -->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1082,10 +1130,10 @@
         ```python
         >>> import csv
         >>> with open('./exercises/llc-chapters.csv') as chapters_file:
-        >>>     chapters = csv.DictReader(chapters_file)
-        >>>     for chapter in chapters:
-        ...         print(chapter['City'] + ', ' + chapter['Province'])
-        ...         print('    ' + chapter['Chapter Lead(s)'])
+        >>>   chapters = csv.DictReader(chapters_file)
+        >>>   for chapter in chapters:
+        ...     print(chapter['City'] + ', ' + chapter['Province'])
+        ...     print('    ' + chapter['Chapter Lead(s)'])
         ...
         Vancouver, BC
             Meghan
@@ -1148,7 +1196,7 @@
 
             count = 0
             for row in csv_data:
-                count += 1
+              count += 1
 
             print("There are " + str(count) + " chapters")
         ```
